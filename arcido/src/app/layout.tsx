@@ -26,11 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen relative`}
-      >
+      <body className=" relative">
         <StarCanvas />
-        <div className="relative min-h-screen flex flex-col">
+        <div className="relative h-full flex flex-col">
           <Navbar />
           {children}
         </div>

@@ -2,57 +2,129 @@
 
 import { useEffect, useRef } from "react";
 
+type Star = {
+  x: number;
+  y: number;
+  r: number;
+  s: number;
+};
+
+type Comet = {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  length: number;
+};
+
 export default function StarCanvas() {
-    const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-    useEffect(() => {
-        const canvas = canvasRef.current!;
-        const ctx = canvas.getContext("2d")!;
+  useEffect(() => {
+    const canvas = canvasRef.current!;
+    const ctx = canvas.getContext("2d")!;
 
-        const resize = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = Math.max(
-                window.innerHeight,
-                document.body.scrollHeight
-            );
+    const resize = () => {
+      const height = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        window.innerHeight
+      );
 
-        };
+      canvas.width = window.innerWidth;
+      canvas.height = height;
+    };
 
-        resize();
-        window.addEventListener("resize", resize);
+    resize();
 
-        const stars = Array.from({ length: 200 }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            radius: Math.random() * 1.2,
-            speed: Math.random() * 0.3 + 0.1,
-        }));
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(document.body);
 
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "white";
+    /* ---------- Stars ---------- */
+    const stars: Star[] = Array.from({ length: 300 }, () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.2,
+      s: Math.random() * 0.4 + 0.1,
+    }));
 
-            stars.forEach((star) => {
-                star.y -= star.speed;
-                if (star.y < 0) star.y = canvas.height;
+    /* ---------- Comets ---------- */
+    const comets: Comet[] = Array.from({ length: 3 }, () => createComet());
 
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.fill();
-            });
+    function createComet(): Comet {
+      return {
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * canvas.height * 0.5,
+        vx: 4 + Math.random() * 2,
+        vy: 2 + Math.random() * 1.5,
+        length: 120 + Math.random() * 80,
+      };
+    }
 
-            requestAnimationFrame(animate);
+    function drawComet(comet: Comet) {
+      const tailX = comet.x - comet.vx * comet.length;
+      const tailY = comet.y - comet.vy * comet.length;
+
+      const gradient = ctx.createLinearGradient(
+        comet.x,
+        comet.y,
+        tailX,
+        tailY
+      );
+
+      gradient.addColorStop(0, "rgba(255,255,255,0.9)");
+      gradient.addColorStop(1, "rgba(255,255,255,0)");
+
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(comet.x, comet.y);
+      ctx.lineTo(tailX, tailY);
+      ctx.stroke();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      /* Stars */
+      ctx.fillStyle = "white";
+      for (const star of stars) {
+        star.y -= star.s;
+        if (star.y < 0) star.y = canvas.height;
+
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      /* Comets */
+      for (const comet of comets) {
+        comet.x += comet.vx;
+        comet.y += comet.vy;
+
+        drawComet(comet);
+
+        if (
+          comet.x > canvas.width + comet.length ||
+          comet.y > canvas.height + comet.length
+        ) {
+          Object.assign(comet, createComet());
+          comet.x = -comet.length;
         }
+      }
 
-        animate();
+      requestAnimationFrame(animate);
+    }
 
-        return () => window.removeEventListener("resize", resize);
-    }, []);
+    animate();
 
-    return (
-        <canvas
-            ref={canvasRef}
-            className="fixed top-0 left-0 -z-10 block"
-        />
-    );
+    return () => resizeObserver.disconnect();
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 -z-10 pointer-events-none"
+    />
+  );
 }
