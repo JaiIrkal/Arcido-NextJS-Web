@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar/Navbar";
 import StarCanvas from "../components/StarCanvas/StarCanvas";
+import Footer from "../components/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,18 +22,27 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className=" relative">
+      <body className="relative min-h-screen">
         <StarCanvas />
-        <div className="relative h-full flex flex-col">
+
+        <div className="relative flex min-h-screen flex-col">
           <Navbar />
-          {children}
+
+          {/* Main page content */}
+          <main className="flex-1">
+            {children}
+          </main>
+
+          {/* Footer */}
+          <Footer />
         </div>
       </body>
     </html>
   );
 }
+
