@@ -50,7 +50,7 @@ export default function Home() {
       {/* ================= HERO ================= */}
       <section className="relative py-40 text-center">
         <h1 className="text-white text-[150px] font-bold">Arcido</h1>
-        <p className="tracking-[6px] mt-4 text-white">
+        <p className="relative tracking-[6px] -mt-5 text-white ml-80">
           DIGITAL DONE RIGHT.
         </p>
       </section>
