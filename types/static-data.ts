@@ -72,3 +72,75 @@ export const footer_content = [
         ]
     }
 ]
+
+export const arcido_tech_services = [
+    {
+        id: 1,
+        img:"images/arcido-tech-assets/web.png",
+        title:"Custom Website Development",
+    },
+    {
+        id: 2,
+        img:"images/arcido-tech-assets/mobile.png",
+        title:"Mobile App Development",
+    },
+    {
+        id: 3,
+        img:"images/arcido-tech-assets/cloud.png",
+        title:"Cloud Hosting & Deployment",
+    }
+]
+
+export const arcido_studio_services = [
+    {
+        id: 1,
+        img:"images/arcido-studios-assets/photography.png",
+        title:"Photography, Product Shoots & Promotional Video Creation",
+    },
+    {
+        id: 2,
+        img:"images/arcido-studios-assets/ui.png",
+        title:"UI/UX Design, Branding & Marketing Collateral Design",
+    },
+    {
+        id: 3,
+        img:"images/arcido-studios-assets/packaging.png",
+        title:"Packaging Design & Labelling Concepts",
+    }
+]
+
+export const arcido_flow_services = [
+    {
+        id: 1,
+        img:"images/arcido-flow-assets/print.png",
+        title:"High-Quality Printing and Packaging Solutions",
+    },
+    {
+        id: 2,
+        img:"images/arcido-flow-assets/logistics.png",
+        title:"Shipping Label Generation",
+    },
+    {
+        id: 3,
+        img:"images/arcido-flow-assets/tracking.png",
+        title:"Real-time Tracking Dashboard and Logistics API Integration with Providers",
+    }
+]
+
+export const arcido_digital_services = [
+    {
+        id: 1,
+        img:"images/arcido-digital-assets/social.png",
+        title:"Social Media Marketing & Management",
+    },
+    {
+        id: 2,
+        img:"images/arcido-digital-assets/seo.png",
+        title:"SEO, SEM & PPC Campaigns",
+    },
+    {
+        id: 3,
+        img:"images/arcido-digital-assets/report.png",
+        title:"Market Analysis & Campaign Performance Reporting",
+    }
+]

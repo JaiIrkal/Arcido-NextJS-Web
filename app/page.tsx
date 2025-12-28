@@ -57,8 +57,8 @@ export default function Home() {
                text-white tracking-[4px] sm:tracking-[6px] 
                text-xs sm:text-sm md:text-base
                lg:ml-6">
-  DIGITAL DONE RIGHT.
-</p>
+          DIGITAL DONE RIGHT.
+        </p>
 
       </section>
 
@@ -176,9 +176,11 @@ export default function Home() {
             industry <span className="text-[#72B6FF]">starts here.</span>
           </p>
 
-          <button className="mt-6 bg-white text-black px-6 py-2 rounded-lg text-sm sm:text-base">
-            Book a Demo
-          </button>
+          <a href="mailto:support@arcido.in?subject=Demo%20Request&body=Hi%20Arcido%20Team,">
+            <button className="mt-6 bg-white text-black px-6 py-2 rounded-lg text-sm sm:text-base">
+              Book a Demo
+            </button>
+          </a>
         </div>
 
         {/* Floating Assets */}

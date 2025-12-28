@@ -1,3 +1,5 @@
+import { Division } from "@/types/types";
+
 export default function DivisionComponentOne({ division }: { division: Division }) {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-around py-10 px-4 sm:px-8 lg:px-10 gap-8 lg:gap-0">
