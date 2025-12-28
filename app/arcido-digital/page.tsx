@@ -22,7 +22,7 @@ export default function Page() {
       </h1>
 
       <p className="text-lg opacity-80">
-        Arcido Tech
+        Arcido Digital
       </p>
     </main>
   );

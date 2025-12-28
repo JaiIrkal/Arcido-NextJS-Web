@@ -4,12 +4,12 @@ export default function NavbarGroupComponent() {
     return (
         <div className="border-2 border-[#4A4A4A] flex h-18 items-center justify-center bg-[#131313] gap-6 px-16 shadow-md rounded-4xl">
             <Link href="/">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center">
                     <img
                         src="images/arcido-logo.png"
                         className="h-8 w-8" alt="Arcido Logo"
                     />
-                    <h4 className="text-sm text-white">RCIDO</h4>
+                    <h4 className="relative text-sm text-white left-1">RCIDO</h4>
                 </div>
             </Link>
             <Link href="/arcido-studio">

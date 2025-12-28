@@ -1,4 +1,4 @@
-import { Division } from "@/src/types/types";
+import { Division } from "@/types/types";
 
 export default function DivisionComponentOne({ division }: Readonly<{ division: Division }>) {
     return (

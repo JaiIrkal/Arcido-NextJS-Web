@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { footer_content } from "@/src/types/static-data";
+import { footer_content } from "@/types/static-data";
 
 export default function Footer() {
   return (
