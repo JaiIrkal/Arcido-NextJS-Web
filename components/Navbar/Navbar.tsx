@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <nav className="relative mt-4 flex h-22 w-full items-center justify-between bg-transparent px-6 md:px-16 shadow-md">
-      
+
       {/* Desktop Menu */}
       <div className="hidden md:flex w-full items-center justify-center gap-12">
         <Link href="/arcido-tech">
@@ -33,7 +33,19 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Hamburger */}
-      <div className="flex md:hidden w-full justify-end">
+      {/* Mobile Header */}
+      <div className="flex md:hidden w-full items-center justify-between px-6">
+
+        {/* Arcido Logo */}
+        <Link href="/">
+          <img
+            src="/images/arcido-logo.png"
+            alt="Arcido Logo"
+            className="w-8 h-8"
+          />
+        </Link>
+
+        {/* Hamburger */}
         <button
           onClick={() => setOpen(!open)}
           className="text-white"
@@ -42,6 +54,7 @@ export default function Navbar() {
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
+
 
       {/* Mobile Menu */}
       {open && (
