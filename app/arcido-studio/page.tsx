@@ -16,7 +16,7 @@ export default function Page() {
           alt="Arcido Studio Logo"
           className="
       w-[296px] h-[296px]
-      sm:w-[698px] sm:h-[698px]
+      sm:w-[598px] sm:h-[598px]
       mb-8
     "
         />
