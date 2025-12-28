@@ -48,48 +48,78 @@ export default function Home() {
     <main className="w-full flex flex-col">
 
       {/* ================= HERO ================= */}
-      <section className="relative py-40 text-center">
-        <h1 className="text-white text-[150px] font-bold">Arcido</h1>
-        <p className="relative tracking-[6px] -mt-5 text-white ml-80">
-          DIGITAL DONE RIGHT.
-        </p>
+      <section className="relative py-24 sm:py-32 md:py-40 text-center px-4">
+        <h1 className="mb-4 text-white font-bold text-6xl sm:text-7xl md:text-8xl lg:text-[150px]">
+          Arcido
+        </h1>
+
+        <p className="relative mt-4 sm:-mt-2 md:-mt-5 
+               text-white tracking-[4px] sm:tracking-[6px] 
+               text-xs sm:text-sm md:text-base
+               lg:ml-6">
+  DIGITAL DONE RIGHT.
+</p>
+
       </section>
 
+
       {/* ================= OUR AIM ================= */}
-      <section className="relative px-36 py-32">
+      <section className="relative px-6 sm:px-12 lg:px-36 py-20 sm:py-24 lg:py-32">
+
+        {/* Bulb */}
         <img
           src="images/home-assets/bulb-asset.png"
-          className="absolute right-40 top-0 w-[141px] animate-float"
+          className="absolute right-4 sm:right-20 lg:right-40 top-0 
+               w-[80px] sm:w-[110px] lg:w-[141px] 
+               animate-float"
           alt="Bulb"
         />
 
-        <h2 className="text-white text-[20px] mb-6">OUR AIM</h2>
+        {/* Heading */}
+        <h2 className="text-white text-sm sm:text-base lg:text-[20px] mb-4 sm:mb-6">
+          OUR AIM
+        </h2>
 
-        <p className="text-[57px]">
+        {/* Main Text */}
+        <p
+          className="text-white 
+      text-2xl sm:text-4xl lg:text-[57px] 
+      leading-snug sm:leading-tight lg:leading-[1.2]"
+        >
           Arcido is a <span className="text-[#72B6FF]">one-stop</span> digital solution provider
-          <br />
+          <br className="hidden sm:block" />
           built to <span className="text-[#72B6FF]">launch or scale</span> startups,
-          <br />
+          <br className="hidden sm:block" />
           SMEs, influencers, and e-commerce brands.
         </p>
 
-        <div className="flex justify-between mt-20">
+        {/* Bottom Icons */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-10 mt-12 sm:mt-16 lg:mt-20">
+
           <img
             src="images/home-assets/cursor-asset.png"
-            className="w-[217px] animate-float rotate-[-20deg]"
+            className="hidden sm:block 
+             w-[140px] sm:w-[140px] lg:w-[217px]
+             animate-float rotate-[-20deg]"
             alt="Cursor"
           />
+
+
           <img
             src="images/home-assets/rocket-asset.png"
-            className="w-[275px] animate-float rotate-[260deg]"
+            className="w-[170px] sm:w-[180px] lg:w-[275px] 
+                 animate-float rotate-[260deg]"
             alt="Rocket"
           />
         </div>
       </section>
 
+
       {/* ================= OUR DIVISIONS ================= */}
-      <section className="bg-black px-36 py-32">
-        <h2 className="text-white text-[20px] mb-12">OUR DIVISIONS</h2>
+      <section className="bg-black px-6 sm:px-12 lg:px-36 py-20 sm:py-24 lg:py-32">
+        <h2 className="text-white text-sm sm:text-base lg:text-[20px] mb-8 lg:mb-12">
+          OUR DIVISIONS
+        </h2>
 
         {ourDivisions.map((division) =>
           division.id % 2 !== 0 ? (
@@ -100,22 +130,29 @@ export default function Home() {
         )}
       </section>
 
+
       {/* ================= WHY ARCIDO ================= */}
-      <section className="bg-black px-36 py-32 text-center">
-        <h2 className="text-white text-3xl mb-4">Why Arcido?</h2>
-        <p className="text-gray-400">
+      <section className="bg-black px-6 sm:px-12 lg:px-36 py-20 sm:py-24 lg:py-32 text-center">
+        <h2 className="text-white text-2xl sm:text-3xl mb-4">
+          Why Arcido?
+        </h2>
+
+        <p className="text-gray-400 text-sm sm:text-base">
           We work with world-class technologies to keep you ahead.
         </p>
 
-        <div className="flex justify-around mt-16">
+        <div className="flex flex-col lg:flex-row justify-around items-center gap-12 mt-12 lg:mt-16">
           {why_arcido.map((item) => (
-            <div key={item.id} className="w-[320px] flex flex-col items-center gap-4">
+            <div
+              key={item.id}
+              className="w-full sm:w-[320px] flex flex-col items-center gap-4"
+            >
               <img
                 src={item.img}
-                className="w-[341px] h-[341px]"
+                className="w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] lg:w-[341px] lg:h-[341px]"
                 alt={item.title}
               />
-              <h3 className="text-white text-xl font-bold">
+              <h3 className="text-white text-lg sm:text-xl font-bold">
                 {item.title}
               </h3>
             </div>
@@ -123,33 +160,48 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* ================= CTA ================= */}
-      <section className="bg-black px-36 py-0 pt-40">
+      <section className="bg-black px-6 sm:px-12 lg:px-36 py-0 pt-24 sm:pt-32 lg:pt-40">
+
+        {/* Text + CTA */}
         <div className="flex flex-col items-center text-center">
-          <p className="text-[57px]">
+          <p
+            className="text-white 
+        text-2xl sm:text-4xl lg:text-[57px]
+        leading-tight sm:leading-snug"
+          >
             The future of your
-            <br />
+            <br className="sm:block" />
             industry <span className="text-[#72B6FF]">starts here.</span>
           </p>
 
-          <button className="mt-6 bg-white text-black px-6 py-2 rounded-lg">
+          <button className="mt-6 bg-white text-black px-6 py-2 rounded-lg text-sm sm:text-base">
             Book a Demo
           </button>
         </div>
 
-        <div className="flex justify-between mt-20">
+        {/* Floating Assets */}
+        <div className="flex justify-between items-center mt-12 sm:mt-16 lg:mt-20">
+
           <img
             src="images/home-assets/asterisk-asset.png"
-            className="w-[217px] animate-float rotate-[-20deg] relative bottom-45"
+            className="w-[120px] sm:w-[170px] lg:w-[217px] 
+                 animate-float rotate-[-20deg]
+                 relative sm:bottom-20 lg:bottom-45"
             alt="Asterisk"
           />
+
           <img
             src="images/home-assets/cursor-bottom-asset.png"
-            className="w-[275px] animate-float rotate-[315deg] bottom-90 relative"
-            alt="Rocket"
+            className="w-[150px] sm:w-[220px] lg:w-[275px] 
+                 animate-float rotate-[315deg]
+                 relative sm:bottom-28 lg:bottom-90"
+            alt="Cursor"
           />
         </div>
       </section>
+
     </main>
   );
 }
