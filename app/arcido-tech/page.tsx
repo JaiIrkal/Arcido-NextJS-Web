@@ -17,14 +17,14 @@ export default function Page() {
           alt="Arcido Tech Logo"
           className="
       w-[296px] h-[296px]
-      sm:w-[698px] sm:h-[698px]
+      sm:w-[508px] sm:h-[508px]
       mb-8
     "
         />
       </section>
 
       {/* Our Aim */}
-      <section className="relative px-6 sm:px-12 lg:px-36 py-20 sm:py-24 lg:py-32">
+      <section className="relative px-6 sm:px-12 lg:px-36 py-20 sm:py-24 lg:py-27">
 
         {/* Bulb */}
         <img
@@ -128,7 +128,7 @@ export default function Page() {
         </div>
 
         {/* Floating Assets */}
-        <div className="flex justify-between items-center mt-12 sm:mt-16 lg:mt-20">
+        <div className="flex justify-between items-center mt-12 sm:mt-16 lg:mt-15">
 
           <img
             src="images/home-assets/asterisk-asset.png"

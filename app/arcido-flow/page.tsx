@@ -12,11 +12,19 @@ export default function Page() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-transparent text-white text-center">
       <section className="mt-8">
+        <img src="/images/subsidary-icons/landscape/arcido-flow-logo.png"
+          alt="Arcido Studio Logo"
+          className="
+      w-0 h-0
+      sm:w-[808px] sm:h-[708px]
+      sm:-mb-20 sm:-mt-28
+    "
+        />
         <img src="/images/subsidary-icons/arcido-flow-logo.png"
           alt="Arcido Studio Logo"
           className="
       w-[296px] h-[296px]
-      sm:w-[558px] sm:h-[558px]
+      sm:w-0 sm:h-0
       mb-8
     "
         />
