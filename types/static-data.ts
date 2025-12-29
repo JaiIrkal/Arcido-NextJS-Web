@@ -30,7 +30,7 @@ export const footer_content = [
                 url:"/arcido-digital"
             },
             {
-                label:"Arcido Studio",
+                label:"Arcido Studios",
                 url:"/arcido-studios"
             },
             {

@@ -17,8 +17,8 @@ export default function Navbar() {
           <h4 className="text-sm text-white">ARCIDO TECH</h4>
         </Link>
 
-        <Link href="/arcido-studio">
-          <h4 className="text-sm text-white">ARCIDO STUDIO</h4>
+        <Link href="/arcido-studios">
+          <h4 className="text-sm text-white">ARCIDO STUDIOS</h4>
         </Link>
 
         <NavbarGroupComponent />
