@@ -31,7 +31,7 @@ export const footer_content = [
             },
             {
                 label:"Arcido Studio",
-                url:"/arcido-studio"
+                url:"/arcido-studios"
             },
             {
                 label:"Arcido Flow",

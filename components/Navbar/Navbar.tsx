@@ -63,8 +63,8 @@ export default function Navbar() {
             <h4 className="text-sm text-white">ARCIDO TECH</h4>
           </Link>
 
-          <Link href="/arcido-studio" onClick={() => setOpen(false)}>
-            <h4 className="text-sm text-white">ARCIDO STUDIO</h4>
+          <Link href="/arcido-studios" onClick={() => setOpen(false)}>
+            <h4 className="text-sm text-white">ARCIDO STUDIOS</h4>
           </Link>
 
           <Link href="/arcido-flow" onClick={() => setOpen(false)}>
