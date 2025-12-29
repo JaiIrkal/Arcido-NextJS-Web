@@ -33,8 +33,7 @@ export default function Page() {
                animate-float"
           alt="Bulb"
         />
-
-        {/* Heading */}
+        
         {/* Heading */}
         <h2 className="text-white text-sm sm:text-base lg:text-[20px] mb-4 sm:mb-6
                text-center lg:text-left">

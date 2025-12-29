@@ -116,7 +116,7 @@ export default function Home() {
 
 
       {/* ================= OUR DIVISIONS ================= */}
-      <section className="bg-black px-6 sm:px-12 lg:px-36 py-20 sm:py-24 lg:py-32">
+      <section className="bg-black px-6 sm:px-12 lg:px-36 py-20 sm:py-24 lg:py-20">
         <h2 className="text-white text-sm sm:text-base lg:text-[20px] mb-8 lg:mb-12">
           OUR DIVISIONS
         </h2>
@@ -132,7 +132,7 @@ export default function Home() {
 
 
       {/* ================= WHY ARCIDO ================= */}
-      <section className="bg-black px-6 sm:px-12 lg:px-36 py-20 sm:py-24 lg:py-32 text-center">
+      <section className="bg-black px-6 sm:px-12 lg:px-36 py-20 sm:py-20 lg:py-32 text-center">
         <h2 className="text-white text-2xl sm:text-3xl mb-4">
           Why Arcido?
         </h2>
@@ -162,7 +162,7 @@ export default function Home() {
 
 
       {/* ================= CTA ================= */}
-      <section className="bg-black px-6 sm:px-12 lg:px-36 py-0 pt-24 sm:pt-32 lg:pt-40">
+      <section className="bg-black px-6 sm:px-12 lg:px-36 py-0 pt-24 sm:pt-32 lg:pt-30">
 
         {/* Text + CTA */}
         <div className="flex flex-col items-center text-center">
