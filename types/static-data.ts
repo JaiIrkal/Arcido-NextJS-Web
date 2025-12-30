@@ -61,10 +61,10 @@ export const footer_content = [
                 label:"Blog",
                 url:"/blog"
             },
-            {
-                label:"Documentation",
-                url:"/documentation"
-            },
+            // {
+            //     label:"Documentation",
+            //     url:"/documentation"
+            // },
             {
                 label:"Events",
                 url:"/events"
