@@ -122,7 +122,7 @@ export default function Page() {
 
           <a href="mailto:support@arcido.in?subject=Demo%20Request&body=Hi%20Arcido%20Team,">
             <button className="mt-6 bg-white text-black px-6 py-2 rounded-lg text-sm sm:text-base">
-              Book a Demo
+              Contact Us
             </button>
           </a>
         </div>
