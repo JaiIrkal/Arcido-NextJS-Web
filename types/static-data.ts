@@ -45,11 +45,11 @@ export const footer_content = [
         links:[
             {
                 label:"About Us",
-                url:"/"
+                url:"company/"
             },
             {
                 label:"Careers",
-                url:"/careers"
+                url:"company/careers"
             }
         ]
     },
@@ -59,7 +59,7 @@ export const footer_content = [
         links:[
             {
                 label:"Blog",
-                url:"/blog"
+                url:"resources/blog"
             },
             // {
             //     label:"Documentation",
@@ -67,7 +67,7 @@ export const footer_content = [
             // },
             {
                 label:"Events",
-                url:"/events"
+                url:"resources/events"
             }
         ]
     }
