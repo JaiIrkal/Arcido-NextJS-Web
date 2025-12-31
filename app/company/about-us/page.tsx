@@ -33,9 +33,9 @@ export default function Page() {
       leading-snug sm:leading-tight lg:leading-[1.2]"
         >
           At Arcido, we help businesses build, grow and scale their{" "}<span className="text-[#72B6FF]">digital presence</span> 
-          {" "}end to end. In a fragmented digital world, companies oftern juggle multiple{" "}
+          {" "}end to end. In a fragmented digital world, companies often juggle multiple{" "}
           vendors for<span className="text-[#72B6FF]">{" "}websites, marketing, content, and operations</span>.
-          <br/>Arcido was founded to change that. We bring everything under one roof, offering a seamless, integrated appreacg to digital growth.
+          <br/>Arcido was founded to change that. We bring everything under one roof, offering a seamless, integrated approach to digital growth.
         </p>
 
         {/* Bottom Icons */}
