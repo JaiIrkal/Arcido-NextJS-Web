@@ -123,7 +123,7 @@ export default function Page() {
           >
             The future of your
             <br className="sm:block" />
-            industry <span className="text-[#72B6FF]">starts here.</span>
+            Brand <span className="text-[#72B6FF]">starts here.</span>
           </p>
 
           <a href="mailto:support@arcido.in?subject=Demo%20Request&body=Hi%20Arcido%20Team,">
