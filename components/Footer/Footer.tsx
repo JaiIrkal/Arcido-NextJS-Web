@@ -40,14 +40,14 @@ export default function Footer() {
           <div className="flex mt-2 gap-3">
             <Link href="https://www.linkedin.com/company/arcido">
               <img
-                src="images/social-media/linkedin.svg"
+                src="/images/social-media/linkedin.svg"
                 className="w-[20px] h-[20px]"
                 alt="LinkedIn"
               />
             </Link>
             <Link href="https://www.instagram.com/the.arcido/">
               <img
-                src="images/social-media/instagram.png"
+                src="/images/social-media/instagram.png"
                 className="w-[20px] h-[20px]"
                 alt="Instagram"
               />

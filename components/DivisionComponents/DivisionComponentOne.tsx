@@ -2,12 +2,12 @@ import { Division } from "@/types/types";
 
 export default function DivisionComponentOne({ division }: { division: Division }) {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-around py-10 px-4 sm:px-8 lg:px-10 gap-8 lg:gap-0">
+    <div className="flex flex-col lg:flex-row items-center justify-around py-0 px-4 sm:px-8 lg:px-10 gap-8 lg:gap-0">
       
       <img
         src={division.image}
         alt={division.title}
-        className="w-full max-w-[639px] h-auto lg:w-[639px] lg:h-[343px] rounded-2xl"
+        className="w-full max-w-[639px] h-auto lg:w-[639px] lg:h-[443px] 2xl:h-[543px] rounded-2xl"
       />
 
       <div className="lg:relative lg:left-10 text-center lg:text-left">

@@ -6,13 +6,13 @@ export default function NavbarGroupComponent() {
             <Link href="/">
                 <div className="flex items-center">
                     <img
-                        src="images/arcido-logo.png"
+                        src="/images/arcido-logo.png"
                         className="h-8 w-8" alt="Arcido Logo"
                     />
                     <h4 className="relative text-sm text-white left-1">RCIDO</h4>
                 </div>
             </Link>
-            <Link href="/arcido-studio">
+            <Link href="/company/about-us">
                 <h4 className="text-sm text-white">ABOUT US</h4>
             </Link>
             <div className="flex gap-2">
