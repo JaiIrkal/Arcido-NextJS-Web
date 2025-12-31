@@ -12,7 +12,7 @@ export default function Home() {
       image: "images/subsidary-icons/landscape/arcido-tech-logo.png",
       subline: "Build Tomorrow's Digital Experiences Today.",
       services: ["3D", "Cloud", "Website", "Apps", "Hosting"],
-      description: "We engineer robust, scalable web and mobile applications that fuel business growth. From pixel-oerfect design to secure cloud hosting and seamless integrations. We turn digital visions tinto reality with cutting-edge technologies.",
+      description: "We engineer robust, scalable web and mobile applications that fuel business growth. From pixel-perfect design to secure cloud hosting and seamless integrations. We turn digital visions into reality with cutting-edge technologies.",
       href: "/arcido-tech"
     },
     {
