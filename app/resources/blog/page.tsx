@@ -21,10 +21,6 @@ export default function Page() {
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-2">
           Launching Soon
         </h1>
-
-        <p className="text-lg opacity-80">
-          Arcido Blogs
-        </p>
       </div>
     </main>
   );
