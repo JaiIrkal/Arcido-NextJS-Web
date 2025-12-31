@@ -61,7 +61,7 @@ export default function Footer() {
         {/* Logo + Social (mobile row) */}
         <div className="flex items-center justify-between sm:justify-start sm:gap-6">
           <img
-            src="images/arcido-logo.png"
+            src="/images/arcido-logo.png"
             className="w-[82px] h-[82px]"
             alt="Footer Logo"
           />
@@ -72,14 +72,14 @@ export default function Footer() {
             <div className="flex gap-3 sm:hidden">
             <Link href="https://www.linkedin.com/company/arcido">
               <img
-                src="images/social-media/linkedin.svg"
+                src="/images/social-media/linkedin.svg"
                 className="w-[20px] h-[20px]"
                 alt="LinkedIn"
               />
             </Link>
             <Link href="https://www.instagram.com/the.arcido/">
               <img
-                src="images/social-media/instagram.png"
+                src="/images/social-media/instagram.png"
                 className="w-[20px] h-[20px]"
                 alt="Instagram"
               />
