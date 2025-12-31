@@ -11,19 +11,21 @@ const Lottie = dynamic(() => import("lottie-react"), {
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-transparent text-white text-center px-4">
-      <Lottie
-        animationData={launchingAnimation}
-        loop
-        className="w-72 h-72 mb-8"
-      />
+      <div className="flex flex-col items-center justify-center text-center -mt-[250px]">
+        <Lottie
+          animationData={launchingAnimation}
+          loop
+          className="relative w-72 h-72"
+        />
 
-      <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-2">
-        Launching Soon
-      </h1>
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-2">
+          Launching Soon
+        </h1>
 
-      <p className="text-lg opacity-80">
-        Arcido Blogs
-      </p>
+        <p className="text-lg opacity-80">
+          Arcido Blogs
+        </p>
+      </div>
     </main>
   );
 }
