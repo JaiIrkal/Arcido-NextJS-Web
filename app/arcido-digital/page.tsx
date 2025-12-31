@@ -46,7 +46,7 @@ export default function Page() {
 
         {/* Heading */}
         <h2 className="text-white text-sm sm:text-base lg:text-[20px] mb-4 sm:mb-6
-               text-center lg:text-left">
+               text-center lg:text-left mt-15">
           OUR AIM
         </h2>
 
@@ -57,7 +57,7 @@ export default function Page() {
     leading-snug sm:leading-tight lg:leading-[1.2]
     text-center lg:text-left"
         >
-          To Build Brand Visibility and Drive Measurable Growth <br/>Through{" "}
+          To Build Brand Visibility and Drive Measurable Growth Through{" "}
           <span className="text-[#72B6FF]">Data-Driven Campaigns </span>.
         </p>
 
