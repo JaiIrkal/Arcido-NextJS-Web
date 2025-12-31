@@ -86,9 +86,9 @@ export default function Home() {
       text-2xl sm:text-4xl lg:text-[57px] 
       leading-snug sm:leading-tight lg:leading-[1.2]"
         >
-          Arcido is a <span className="text-[#72B6FF]">one-stop</span> digital solution provider{" "}
+          Arcido is a <span className="text-[#72B6FF]">one-stop</span> digital solution{" "}
           <br className="hidden sm:block" />
-          built to <span className="text-[#72B6FF]">launch or scale</span> startups,
+          provider built to <span className="text-[#72B6FF]">launch or scale</span> startups,
           <br className="hidden sm:block" />
           SMEs, influencers, and e-commerce brands.
         </p>
