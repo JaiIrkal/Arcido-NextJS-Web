@@ -57,9 +57,7 @@ export default function Page() {
     text-center lg:text-left"
         >
           Deliver cutting-edge, scalable web and mobile applications backed by{" "}
-          <span className="text-[#72B6FF]">robust infrastructure</span>
-          <br className="hidden sm:block" />
-          and{" "}<span className="text-[#72B6FF]">secure integrations</span>.
+          <span className="text-[#72B6FF]">robust infrastructure</span>{" "}and{" "}<span className="text-[#72B6FF]">secure integrations</span>.
         </p>
 
 
