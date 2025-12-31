@@ -16,12 +16,12 @@ export default function NavbarGroupComponent() {
                 <h4 className="text-sm text-white">ABOUT US</h4>
             </Link>
             <div className="flex gap-2">
-                <Link href="/arcido-flow">
+                <Link href="/signin">
                     <div className="border-2 border-[#4A4A4A] px-6 py-2 rounded-3xl">
                         <h4 className="text-sm text-white">LOGIN</h4>
                     </div>
                 </Link>
-                <Link href="/arcido-digital">
+                <Link href="/signup">
                     <div className="bg-white rounded-3xl px-4 py-2">
                         <h4 className="text-sm text-black">SIGNUP</h4>
                     </div>
