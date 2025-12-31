@@ -38,7 +38,7 @@ export default function Page() {
         {/* Bulb */}
         <img
           src="images/home-assets/bulb-asset.png"
-          className="absolute right-4 sm:right-20 lg:right-40 top-0 
+          className="absolute right-4 sm:right-20 lg:right-40 top-[70px] 
                w-[80px] sm:w-[110px] lg:w-[141px] 
                animate-float"
           alt="Bulb"
