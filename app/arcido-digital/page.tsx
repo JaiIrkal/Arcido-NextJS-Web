@@ -16,8 +16,8 @@ export default function Page() {
           alt="Arcido Digital Logo"
           className="
       w-0 h-0
-      sm:w-[808px] sm:h-[708px]
-      sm:-mb-20 sm:-mt-28
+      sm:w-[608px] sm:h-[608px]
+      sm:-mb-17 sm:-mt-18
     "
         />
   <img
@@ -26,7 +26,7 @@ export default function Page() {
     className="
       w-[296px] h-[296px]
       sm:w-0 sm:h-0
-      mb-8
+      mb-8 mt-8
     "
   />
 </section>

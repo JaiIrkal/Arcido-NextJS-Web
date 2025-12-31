@@ -12,13 +12,21 @@ const Lottie = dynamic(() => import("lottie-react"), {
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-transparent text-white text-center">
-      <section className="">
+      <section className="mt-8">
+        <img src="/images/subsidary-icons/landscape/arcido-tech-logo.png"
+          alt="Arcido Tech Logo"
+          className="
+      w-0 h-0
+      sm:w-[608px] sm:h-[608px]
+      sm:-mb-20 sm:-mt-18
+    "
+        />
         <img src="/images/subsidary-icons/arcido-tech-logo.png"
           alt="Arcido Tech Logo"
           className="
       w-[296px] h-[296px]
-      sm:w-[508px] sm:h-[508px]
-      mb-8
+      sm:w-0 sm:h-0
+      mb-8 mt-8
     "
         />
       </section>
