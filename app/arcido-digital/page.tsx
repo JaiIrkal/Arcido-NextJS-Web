@@ -58,7 +58,7 @@ export default function Page() {
     text-center lg:text-left"
         >
           To Build Brand Visibility and Drive Measurable Growth Through{" "}
-          <span className="text-[#72B6FF]">Data-Driven Campaigns </span>.
+          <span className="text-[#72B6FF]">Data-Driven Campaigns</span>.
         </p>
 
 
