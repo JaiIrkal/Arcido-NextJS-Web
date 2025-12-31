@@ -45,7 +45,7 @@ export const footer_content = [
         links:[
             {
                 label:"About Us",
-                url:"company/"
+                url:"company/about-us"
             },
             {
                 label:"Careers",
