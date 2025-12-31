@@ -17,9 +17,9 @@ export default function Home() {
     },
     {
       id: 2,
-      title: "Arcido Studio",
+      title: "Arcido Studios",
       image: "images/subsidary-icons/landscape/arcido-studios-logo.png",
-      subline: "Craft a Visual Identity That Captivtes and Converts.",
+      subline: "Craft a Visual Identity That Captivates and Converts.",
       services: ["3D", "Photography", "Videography", "Branding"],
       description: "We shape compelling brand stories through stunning photography, high-impact videos, and world-class design. Whether you need a bold new logo, packaging design, we bring creativity and strategy to leave a lasting impression.",
       href: "/arcido-studio"
@@ -30,7 +30,7 @@ export default function Home() {
       image: "images/subsidary-icons/landscape/arcido-flow-logo.png",
       subline: "Deliver experiences. Not Just Products.",
       services: ["Custom Packaging", "Real-time Tracking"],
-      description: "Arcido Flow streamlines your packaging and logistics, ensuring your brand's journey continues even after checkout. From custom-designed packaging to real-time tracking integraations, we help e-commerce and D2C brands deliver delight with every shipment.",
+      description: "Arcido Flow streamlines your packaging and logistics, ensuring your brand's journey continues even after checkout. From custom-designed packaging to real-time tracking integrations, we help e-commerce and D2C brands deliver delight with every shipment.",
       href: "/arcido-flow"
     },
     {
