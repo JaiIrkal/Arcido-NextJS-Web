@@ -11,7 +11,7 @@ const Lottie = dynamic(() => import("lottie-react"), {
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-transparent text-white text-center px-4">
-      <div className="flex flex-col items-center justify-center text-center -mt-[250px]">
+      <div className="flex flex-col items-center justify-center text-center -mt-[300px]">
         <Lottie
           animationData={launchingAnimation}
           loop
