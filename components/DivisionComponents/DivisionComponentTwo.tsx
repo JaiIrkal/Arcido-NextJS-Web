@@ -2,8 +2,7 @@ import { Division } from "@/types/types";
 
 export default function DivisionComponentTwo({ division }: { division: Division }) {
   return (
-    <div className="flex flex-col-reverse lg:flex-row items-center justify-around py-0 px-4 sm:px-8 lg:px-10 gap-8 lg:gap-0">
-      
+    <div className="flex flex-col-reverse lg:flex-row items-center justify-start lg:justify-around py-0 px-4 sm:px-8 lg:px-10 gap-0 mt-6 lg:-mt-12">
       <div className="text-center lg:text-left lg:pr-10">
         <h2 className="text-white text-2xl lg:text-3xl font-bold mb-4">
           {division.title}
@@ -33,11 +32,20 @@ export default function DivisionComponentTwo({ division }: { division: Division 
         </a>
       </div>
 
+      {/* Mobile image */}
+      <img
+        src={division.image_mobile}
+        alt={division.title}
+        className="block lg:hidden w-full rounded-2xl"
+      />
+
+      {/* Laptop image */}
       <img
         src={division.image}
         alt={division.title}
-        className="w-full max-w-[639px] h-auto lg:w-[639px] lg:h-[443px] 2xl:h-[543px] rounded-2xl"
+        className="hidden lg:block w-full max-w-[609px] lg:h-[443px] 2xl:h-[543px] rounded-2xl"
       />
+
     </div>
   );
 }

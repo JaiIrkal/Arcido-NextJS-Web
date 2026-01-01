@@ -10,6 +10,7 @@ export default function Home() {
       id: 1,
       title: "Arcido Tech",
       image: "images/subsidary-icons/landscape/arcido-tech-logo.png",
+      image_mobile:"images/subsidary-icons/arcido-tech-logo.png",
       subline: "Build Tomorrow's Digital Experiences Today.",
       services: ["3D", "Cloud", "Website", "Apps", "Hosting"],
       description: "We engineer robust, scalable web and mobile applications that fuel business growth. From pixel-perfect design to secure cloud hosting and seamless integrations. We turn digital visions into reality with cutting-edge technologies.",
@@ -19,6 +20,7 @@ export default function Home() {
       id: 2,
       title: "Arcido Studios",
       image: "images/subsidary-icons/landscape/arcido-studios-logo.png",
+      image_mobile:"images/subsidary-icons/arcido-studios-logo.png",
       subline: "Craft a Visual Identity That Captivates and Converts.",
       services: ["3D", "Photography", "Videography", "Branding"],
       description: "We shape compelling brand stories through stunning photography, high-impact videos, and world-class design. Whether you need a bold new logo, packaging design, we bring creativity and strategy to leave a lasting impression.",
@@ -28,6 +30,7 @@ export default function Home() {
       id: 3,
       title: "Arcido Flow",
       image: "images/subsidary-icons/landscape/arcido-flow-logo.png",
+      image_mobile:"images/subsidary-icons/arcido-flow-logo.png",
       subline: "Deliver experiences. Not Just Products.",
       services: ["Custom Packaging", "Real-time Tracking"],
       description: "Arcido Flow streamlines your packaging and logistics, ensuring your brand's journey continues even after checkout. From custom-designed packaging to real-time tracking integrations, we help e-commerce and D2C brands deliver delight with every shipment.",
@@ -37,6 +40,7 @@ export default function Home() {
       id: 4,
       title: "Arcido Digital",
       image: "images/subsidary-icons/landscape/arcido-digital-logo.png",
+      image_mobile:"images/subsidary-icons/arcido-digital-logo.png",
       subline: "Turn Visibility Into Velocity with Data-Driven Marketing.",
       services: ["SCO", "SEO", "PPF", "Analytics", "Social Media Marketing"],
       description: "At Arcido Digital, we amplify your brand presence with strategic marketing campaigns that drive results. Through SEO, paid ads, influencer collaborations, and deep analytics, we don't just market - we fuel sustainable growth.",
@@ -132,7 +136,7 @@ export default function Home() {
 
 
       {/* ================= WHY ARCIDO ================= */}
-      <section className="bg-black px-6 sm:px-12 lg:px-36 py-20 sm:py-20 lg:py-32 text-center">
+      <section className="bg-black px-6 sm:px-12 lg:px-36 py-20 sm:py-20 lg:py-20 text-center">
         <h2 className="text-white text-2xl sm:text-3xl mb-4">
           Why Arcido?
         </h2>
@@ -162,7 +166,7 @@ export default function Home() {
 
 
       {/* ================= CTA ================= */}
-      <section className="bg-black px-6 sm:px-12 lg:px-36 py-0 pt-24 sm:pt-32 lg:pt-30">
+      <section className="bg-black px-6 sm:px-12 lg:px-36 py-0 pt-24 sm:pt-32 lg:pt-50">
 
         {/* Text + CTA */}
         <div className="flex flex-col items-center text-center">
