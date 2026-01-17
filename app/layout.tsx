@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { Analytics } from "@vercel/analytics/next"
 
-const StarCanvas = dynamic(() => import('../components/StarCanvas/StarCanvas'))
+const StarCanvas = dynamic(() => import('../components/StarCanvas/StarCanvas'), {ssr:false})
 
 
 const geistSans = Geist({
