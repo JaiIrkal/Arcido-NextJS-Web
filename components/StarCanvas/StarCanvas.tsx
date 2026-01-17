@@ -31,15 +31,15 @@ export default function StarCanvas() {
     let mounted = true;
 
     const resize = () => {
-      const height = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        window.innerHeight
-      );
+  const wrapper = document.getElementById("page-wrapper");
+  if (!wrapper) return;
 
-      canvas.width = window.innerWidth;
-      canvas.height = height;
-    };
+  const rect = wrapper.getBoundingClientRect();
+
+  canvas.width = window.innerWidth;
+  canvas.height = rect.height;
+};
+
 
     resize();
     window.addEventListener("resize", resize);
