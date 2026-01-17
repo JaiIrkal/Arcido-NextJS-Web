@@ -18,27 +18,59 @@ type Comet = {
 };
 
 export default function StarCanvas() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const frameRef = useRef<number | null>(null);
+  const resizeFrame = useRef<number | null>(null);
+  const lastCanvasHeight = useRef<number>(0);
+
 
   useEffect(() => {
-    const canvas = canvasRef.current!;
-    const ctx = canvas.getContext("2d")!;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let mounted = true;
 
     const resize = () => {
-      const height = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        window.innerHeight
-      );
+      if (!mounted) return;
 
-      canvas.width = window.innerWidth;
-      canvas.height = height;
+      if (resizeFrame.current !== null) {
+        cancelAnimationFrame(resizeFrame.current);
+      }
+
+      resizeFrame.current = requestAnimationFrame(() => {
+        const newHeight = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight,
+          window.innerHeight
+        );
+
+        const oldHeight = canvas.height || newHeight;
+
+        canvas.width = window.innerWidth;
+        canvas.height = newHeight;
+
+        // ✅ PROPORTIONAL redistribution (the missing piece)
+        if (oldHeight !== newHeight) {
+          for (const star of stars) {
+            star.y = (star.y / oldHeight) * newHeight;
+          }
+        }
+
+        lastCanvasHeight.current = newHeight;
+      });
     };
 
-    resize();
 
-    const resizeObserver = new ResizeObserver(resize);
-    resizeObserver.observe(document.body);
+
+    // ⏳ wait for first paint
+    requestAnimationFrame(resize);
+
+    const observer = new ResizeObserver(resize);
+    observer.observe(document.body);
+    observer.observe(document.documentElement);
 
     /* ---------- Stars ---------- */
     const stars: Star[] = Array.from({ length: 300 }, () => ({
@@ -49,19 +81,17 @@ export default function StarCanvas() {
     }));
 
     /* ---------- Comets ---------- */
-    const comets: Comet[] = Array.from({ length: 3 }, () => createComet());
+    const createComet = (): Comet => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * canvas.height * 0.5,
+      vx: 4 + Math.random() * 2,
+      vy: 2 + Math.random() * 1.5,
+      length: 120 + Math.random() * 80,
+    });
 
-    function createComet(): Comet {
-      return {
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * canvas.height * 0.5,
-        vx: 4 + Math.random() * 2,
-        vy: 2 + Math.random() * 1.5,
-        length: 120 + Math.random() * 80,
-      };
-    }
+    const comets: Comet[] = Array.from({ length: 3 }, createComet);
 
-    function drawComet(comet: Comet) {
+    const drawComet = (comet: Comet) => {
       const tailX = comet.x - comet.vx * comet.length;
       const tailY = comet.y - comet.vy * comet.length;
 
@@ -81,12 +111,13 @@ export default function StarCanvas() {
       ctx.moveTo(comet.x, comet.y);
       ctx.lineTo(tailX, tailY);
       ctx.stroke();
-    }
+    };
 
-    function animate() {
+    const animate = () => {
+      if (!mounted) return;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      /* Stars */
       ctx.fillStyle = "white";
       for (const star of stars) {
         star.y -= star.s;
@@ -97,11 +128,9 @@ export default function StarCanvas() {
         ctx.fill();
       }
 
-      /* Comets */
       for (const comet of comets) {
         comet.x += comet.vx;
         comet.y += comet.vy;
-
         drawComet(comet);
 
         if (
@@ -113,18 +142,31 @@ export default function StarCanvas() {
         }
       }
 
-      requestAnimationFrame(animate);
-    }
+      frameRef.current = requestAnimationFrame(animate);
+    };
 
     animate();
 
-    return () => resizeObserver.disconnect();
+    return () => {
+      mounted = false;
+
+      observer.disconnect();
+
+      if (frameRef.current !== null) {
+        cancelAnimationFrame(frameRef.current);
+      }
+
+      if (resizeFrame.current !== null) {
+        cancelAnimationFrame(resizeFrame.current);
+      }
+    };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
       className="fixed inset-0 -z-10 pointer-events-none"
+      aria-hidden
     />
   );
 }
