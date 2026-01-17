@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar/Navbar";
-import StarCanvas from "../components/StarCanvas/StarCanvas";
+// import StarCanvas from "../components/StarCanvas/StarCanvas";
 import Footer from "../components/Footer/Footer";
 import { Analytics } from "@vercel/analytics/next"
+
+const StarCanvas = dynamic(() => import('../components/StarCanvas/StarCanvas'))
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
