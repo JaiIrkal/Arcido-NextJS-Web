@@ -21,7 +21,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Arcido - Digital Done Right.",
   description: "The Future of your Brand Starts Here.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-light.ico", media: "(prefers-color-scheme: light)" },
+    ],
+  },
 };
+
 
 export default function RootLayout({
   children,
