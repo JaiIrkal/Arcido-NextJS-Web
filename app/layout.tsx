@@ -30,6 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <meta name="color-scheme" content="dark" />
       <meta
         name="description"
         content="The Future of your Brand Starts Here."
