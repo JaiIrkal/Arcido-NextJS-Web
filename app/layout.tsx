@@ -3,11 +3,9 @@ import dynamic from "next/dynamic";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar/Navbar";
-// import StarCanvas from "../components/StarCanvas/StarCanvas";
+import ClientLayout from "../components/StarCanvas/ClientLayout";
 import Footer from "../components/Footer/Footer";
 import { Analytics } from "@vercel/analytics/next"
-
-const StarCanvas = dynamic(() => import('../components/StarCanvas/StarCanvas'), {ssr:false})
 
 
 const geistSans = Geist({
@@ -38,7 +36,7 @@ export default function RootLayout({
       />
       <body className="relative">
         <div id="page-wrapper" className="relative min-h-screen">
-          <StarCanvas />
+          <ClientLayout />
 
           <div className="relative z-10 flex min-h-screen flex-col">
             <Navbar />
