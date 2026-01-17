@@ -9,7 +9,7 @@ const Lottie = dynamic(() => import("lottie-react"), {
 
 export default function Page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-transparent text-white px-4">
+    <main className="flex flex-col items-center justify-center bg-transparent text-white px-4">
       <section className="relative px-6 sm:px-12 lg:px-36 py-20 sm:py-24 lg:py-32">
 
         {/* Bulb */}
