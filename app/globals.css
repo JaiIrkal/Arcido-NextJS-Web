@@ -33,6 +33,12 @@ html,
 body {
   width: 100%;
   height: 100%;
+  color-scheme: dark;
+}
+
+canvas {
+  forced-color-adjust: none;
+  filter: none !important;
 }
 
 @keyframes float {

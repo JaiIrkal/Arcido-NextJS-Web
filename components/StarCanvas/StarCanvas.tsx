@@ -31,14 +31,14 @@ export default function StarCanvas() {
     let mounted = true;
 
     const resize = () => {
-  const wrapper = document.getElementById("page-wrapper");
-  if (!wrapper) return;
+      const wrapper = document.getElementById("page-wrapper");
+      if (!wrapper) return;
 
-  const rect = wrapper.getBoundingClientRect();
+      const rect = wrapper.getBoundingClientRect();
 
-  canvas.width = window.innerWidth;
-  canvas.height = rect.height;
-};
+      canvas.width = window.innerWidth;
+      canvas.height = rect.height;
+    };
 
 
     resize();
