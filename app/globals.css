@@ -39,6 +39,7 @@ body {
 canvas {
   forced-color-adjust: none;
   filter: none !important;
+  background-color: black;
 }
 
 @keyframes float {
