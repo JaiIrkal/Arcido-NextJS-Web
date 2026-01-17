@@ -20,9 +20,6 @@ type Comet = {
 export default function StarCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const frameRef = useRef<number | null>(null);
-  const resizeFrame = useRef<number | null>(null);
-  const lastCanvasHeight = useRef<number>(0);
-
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -34,46 +31,21 @@ export default function StarCanvas() {
     let mounted = true;
 
     const resize = () => {
-      if (!mounted) return;
+      const height = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        window.innerHeight
+      );
 
-      if (resizeFrame.current !== null) {
-        cancelAnimationFrame(resizeFrame.current);
-      }
-
-      resizeFrame.current = requestAnimationFrame(() => {
-        const newHeight = Math.max(
-          document.body.scrollHeight,
-          document.documentElement.scrollHeight,
-          window.innerHeight
-        );
-
-        const oldHeight = canvas.height || newHeight;
-
-        canvas.width = window.innerWidth;
-        canvas.height = newHeight;
-
-        // ✅ PROPORTIONAL redistribution (the missing piece)
-        if (oldHeight !== newHeight) {
-          for (const star of stars) {
-            star.y = (star.y / oldHeight) * newHeight;
-          }
-        }
-
-        lastCanvasHeight.current = newHeight;
-      });
+      canvas.width = window.innerWidth;
+      canvas.height = height;
     };
 
-
-
-    // ⏳ wait for first paint
-    requestAnimationFrame(resize);
-
-    const observer = new ResizeObserver(resize);
-    observer.observe(document.body);
-    observer.observe(document.documentElement);
+    resize();
+    window.addEventListener("resize", resize);
 
     /* ---------- Stars ---------- */
-    const stars: Star[] = Array.from({ length: 300 }, () => ({
+    const stars: Star[] = Array.from({ length: 400 }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * canvas.height,
       r: Math.random() * 1.2,
@@ -82,34 +54,28 @@ export default function StarCanvas() {
 
     /* ---------- Comets ---------- */
     const createComet = (): Comet => ({
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * canvas.height * 0.5,
-      vx: 4 + Math.random() * 2,
-      vy: 2 + Math.random() * 1.5,
-      length: 120 + Math.random() * 80,
+      x: -200,
+      y: Math.random() * canvas.height * 0.6,
+      vx: 5 + Math.random() * 2,
+      vy: 2.5 + Math.random() * 1.5,
+      length: 150 + Math.random() * 80,
     });
 
     const comets: Comet[] = Array.from({ length: 3 }, createComet);
 
-    const drawComet = (comet: Comet) => {
-      const tailX = comet.x - comet.vx * comet.length;
-      const tailY = comet.y - comet.vy * comet.length;
+    const drawComet = (c: Comet) => {
+      const tx = c.x - c.vx * c.length;
+      const ty = c.y - c.vy * c.length;
 
-      const gradient = ctx.createLinearGradient(
-        comet.x,
-        comet.y,
-        tailX,
-        tailY
-      );
+      const g = ctx.createLinearGradient(c.x, c.y, tx, ty);
+      g.addColorStop(0, "rgba(255,255,255,0.9)");
+      g.addColorStop(1, "rgba(255,255,255,0)");
 
-      gradient.addColorStop(0, "rgba(255,255,255,0.9)");
-      gradient.addColorStop(1, "rgba(255,255,255,0)");
-
-      ctx.strokeStyle = gradient;
+      ctx.strokeStyle = g;
       ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.moveTo(comet.x, comet.y);
-      ctx.lineTo(tailX, tailY);
+      ctx.moveTo(c.x, c.y);
+      ctx.lineTo(tx, ty);
       ctx.stroke();
     };
 
@@ -119,26 +85,22 @@ export default function StarCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       ctx.fillStyle = "white";
-      for (const star of stars) {
-        star.y -= star.s;
-        if (star.y < 0) star.y = canvas.height;
+      for (const s of stars) {
+        s.y -= s.s;
+        if (s.y < 0) s.y = canvas.height;
 
         ctx.beginPath();
-        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      for (const comet of comets) {
-        comet.x += comet.vx;
-        comet.y += comet.vy;
-        drawComet(comet);
+      for (const c of comets) {
+        c.x += c.vx;
+        c.y += c.vy;
+        drawComet(c);
 
-        if (
-          comet.x > canvas.width + comet.length ||
-          comet.y > canvas.height + comet.length
-        ) {
-          Object.assign(comet, createComet());
-          comet.x = -comet.length;
+        if (c.x > canvas.width + c.length) {
+          Object.assign(c, createComet());
         }
       }
 
@@ -149,23 +111,15 @@ export default function StarCanvas() {
 
     return () => {
       mounted = false;
-
-      observer.disconnect();
-
-      if (frameRef.current !== null) {
-        cancelAnimationFrame(frameRef.current);
-      }
-
-      if (resizeFrame.current !== null) {
-        cancelAnimationFrame(resizeFrame.current);
-      }
+      window.removeEventListener("resize", resize);
+      if (frameRef.current) cancelAnimationFrame(frameRef.current);
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 -z-10 pointer-events-none"
+      className="absolute inset-0 -z-10 pointer-events-none"
       aria-hidden
     />
   );

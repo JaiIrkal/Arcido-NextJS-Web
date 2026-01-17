@@ -29,25 +29,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <meta
-          name="description"
-          content="The Future of your Brand Starts Here."
-        />
-      <body className="relative min-h-screen">
-        <StarCanvas />
+        name="description"
+        content="The Future of your Brand Starts Here."
+      />
+      <body className="relative">
+        <div id="page-wrapper" className="relative min-h-screen">
+          <StarCanvas />
 
-        <div className="relative flex min-h-screen flex-col">
-          <Navbar />
-
-          {/* Main page content */}
-          <main className="flex-1">
-            {children}
-            <Analytics />
-          </main>
-
-          {/* Footer */}
-          <Footer />
+          <div className="relative z-10 flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </div>
       </body>
+
     </html>
   );
 }
